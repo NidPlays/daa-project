@@ -3,7 +3,7 @@ package applicationofdijkstras;
 import java.util.*;
 
 
-class Stack{ 
+class Stack{
 	int top=-1;
 	int stackArray[]=new int[8];
 	void push(int x)
@@ -18,7 +18,7 @@ class Stack{
 	}
 }
 
-
+//test
 class ArrDepData{
 	String Busname[]=new String[8];
 	int BusNumber[]=new int[8];
@@ -28,14 +28,14 @@ class ArrDepData{
 		Busname=A;
 		BusNumber=flno;
 		BusCost=C;
-		
+
 	}
 }
 
 
 
 
-class VertexNames{ 
+class VertexNames{
 	String VertexNames[]=new String[8];
 	VertexNames()
 	{
@@ -48,7 +48,7 @@ class VertexNames{
 		VertexNames[6]="RAI";//RAICHUR
 		VertexNames[7]="DVG";//DAVANGERE
 	}
-	int getBusDepoasIndex(String DepBuspt) 
+	int getBusDepoasIndex(String DepBuspt)
 	{
 		int i=0;
 		try {
@@ -64,52 +64,52 @@ class VertexNames{
 		}
 		return i;
 	}
-	String getBusDepoName(String DepBust) 
+	String getBusDepoName(String DepBust)
 	{
 		switch(DepBust)
 		{
 		case "BLR":
 			return "Bangalore";
-			
+
 		case "MYS":
 			return "Mysore";
-			
+
 		case "CML":
 			return "Chikkamagalur";
-		
+
 		case "UKA":
 			return "Uttar Kannada";
-			
+
 		case "BEL":
 			return "Belgaum";
-		
+
 		case "GUL":
 			return "Gulbarga";
-			
+
 		case "RAI":
 			return "Raichur";
-			
+
 		case "DVG":
 			return "Davangere";
-			
+
 		default: return "Not Found";
 		}
 	}
 
 }
 public class Buses {
-	
-	
-	public static int tot_nodes=8; 
-	public static int tot_edges=12; 
+
+
+	public static int tot_nodes=8;
+	public static int tot_edges=12;
 	public static int path[]=new int[8];
-	static Scanner s=new Scanner(System.in); 
-	static VertexNames BUST=new VertexNames(); 
+	static Scanner s=new Scanner(System.in);
+	static VertexNames BUST=new VertexNames();
 	static ArrDepData Schedule[]=new ArrDepData[8];
 	static Stack Buffer=new Stack();
 	static long MinimumTime;
-	
-	
+
+
 	public static void main(String[] args){
 		int i,j;
 		long cost[][]=new long[8][8];
@@ -151,15 +151,15 @@ public class Buses {
 		else
 			display(i,j,dist);
 	}
-	
-	
+
+
 	public static void create(long cost[][])
 	{
 		int i,j;
 		String Busname[];
 		int BusNumber[];
 		int BusCost[];
-		
+
 		for(i=0;i<tot_nodes;i++)
 		{
 			for(j=0;j<tot_nodes;j++)
@@ -170,8 +170,8 @@ public class Buses {
 					cost[i][j]=1441;
 			}
 		}
-		
-		cost[0][1]=cost[1][0]=150; 
+
+		cost[0][1]=cost[1][0]=150;
 		cost[0][3]=cost[3][0]=400;
 		cost[0][4]=cost[4][0]=450;
 		cost[0][7]=cost[7][0]=180;
@@ -183,32 +183,32 @@ public class Buses {
 		cost[4][5]=cost[5][4]=210;
 		cost[5][6]=cost[6][5]=160;
 		cost[6][7]=cost[7][6]=210;
-		
+
 		Busname=new String[] {"Airavat Bus  ","bRed Busways ","Airavat Bus  "};
-		BusNumber=new int[] {784,486,777,-1};	
+		BusNumber=new int[] {784,486,777,-1};
 		BusCost=new int[] {450,650,500,-1};
 		Schedule[6]=new ArrDepData(Busname,BusNumber,BusCost);
-		
+
 		Busname=new String[] {"bRed Busways ","bRed Busways ","bRed Busways ","Airavat Bus  "};
 		BusNumber=new int[] {433,223,213,197,-1};
 		BusCost=new int[] {800,650,700,500,-1};
 		Schedule[7]=new ArrDepData(Busname,BusNumber,BusCost);
-	
+
 		Busname=new String[] {"WeRL Buslines", "bRed Busways ","Airavat Bus  ", "bRed Busways "};
-		BusNumber=new int[] {566,311,259,448,-1};	
+		BusNumber=new int[] {566,311,259,448,-1};
 		BusCost=new int[] {900,350,500,600,-1};
 		Schedule[4]=new ArrDepData(Busname,BusNumber,BusCost);
-		
+
 		Busname=new String[] {"Airavat Bus  ","Airavat Bus  ","bRed Busways ","bRed Busways ","Airavat Bus  "};
 		BusNumber=new int[] {648,448,742,445,287,-1};
 		BusCost=new int[] {550,750,600,800,450,-1};
 		Schedule[0]=new ArrDepData(Busname,BusNumber,BusCost);
-	
+
 		Busname=new String[] {"WeRL Buslines","Airavat Bus  ","bRed Busways ","bRed Busways ","Airavat Bus  "};
 		BusNumber=new int[] {124,667,446,824,334,-1};
 		BusCost=new int[] {450,650,500,1000,700,-1};
 		Schedule[1]=new ArrDepData(Busname,BusNumber,BusCost);
-		
+
 		Busname=new String[] {"WeRL Buslines", "Airavat Bus  ","WeRL Buslines","WeRL Buslines","bRed Busways "};
 		BusNumber=new int[] {156,187,934,438,555,-1};
 		BusCost=new int[] {450,650,500,1200,600,-1};
@@ -218,13 +218,13 @@ public class Buses {
 		BusNumber=new int[] {789,963,846,748,225,499,-1};
 		BusCost=new int[] {450,650,500,700,400,900,-1};
 		Schedule[2]=new ArrDepData(Busname,BusNumber,BusCost);
-		
+
 		Busname=new String[] {"bRed Busways ","bRed Busways ","WeRL Buslines", "Airavat Bus  ","Airavat Bus  ","Airavat Bus  "};
 		BusNumber=new int[] {986,45,965,102,202,333,-1};
 		BusCost=new int[] {450,650,500,1300,1000,500,-1};
 		Schedule[3]=new ArrDepData(Busname,BusNumber,BusCost);
 	}
-	
+
 	public static void Dijkstra(long[][] cost, int source, long[] dist)
 	{
 		int i,j,v1,v2;
@@ -266,7 +266,7 @@ public class Buses {
 			}
 		}
 	}
-	
+
 	public static void display(int Source,int Destination,long dist[])
 	{
 		int i;
@@ -281,7 +281,7 @@ public class Buses {
 		System.out.println("\nThe Bus Details on your route are: \n");
 		showData(Destination);
 	}
-	
+
 	public static void showData(int dest)
 	{
 		int i=Buffer.pop();
@@ -300,7 +300,7 @@ public class Buses {
 			}
 			i=Buffer.pop();
 		}
-		
+
 		System.out.println();
 		Buffer.pop();
 	}
