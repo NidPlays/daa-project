@@ -18,6 +18,7 @@ class Stack{
 	}
 }
 
+
 class ArrDepData{
 	String Busname[]=new String[8];
 	int BusNumber[]=new int[8];
@@ -38,6 +39,7 @@ class VertexNames{
 	String VertexNames[]=new String[8];
 	VertexNames()
 	{
+		//LOCATIONS
 		VertexNames[0]="BLR";//BANGALORE
 		VertexNames[1]="MYS";//MYSORE
 		VertexNames[2]="CML";//CHIKMANGALURU
@@ -111,6 +113,7 @@ public class Buses {
 
 	public static void main(String[] args){
 		int i,j;
+		//test
 		long cost[][]=new long[8][8];
 		long dist[]=new long[8];
 		String DepartureBusTerminal;
@@ -134,6 +137,7 @@ public class Buses {
 		System.out.println("\t\t\t\t\t         ----------------------------------------------------------------------");
 		System.out.println("\t\t\t    ----------[-o--o]    [-o--o]    [-o--o]    [-o--o]    [-o--o]    [-o--o]    [-o--o]    [-o--o]    [-o--o]----------   \n");
 		create(cost);
+		System.out.println("-----------------------------------");
 		System.out.println("-----------------------------------");
 		System.out.print("Enter the Departure Bus Stand code: ");
 		DepartureBusTerminal=s.next();
@@ -183,42 +187,42 @@ public class Buses {
 		cost[5][6]=cost[6][5]=160;
 		cost[6][7]=cost[7][6]=210;
 
-		Busname=new String[] {"Airavat Bus  ","bRed Busways ","Airavat Bus  "};
+		Busname=new String[] {"VolvoLines   ","bRed Busways ","VolvoLines   "};
 		BusNumber=new int[] {784,486,777,-1};
 		BusCost=new int[] {450,650,500,-1};
 		Schedule[6]=new ArrDepData(Busname,BusNumber,BusCost);
 
-		Busname=new String[] {"bRed Busways ","bRed Busways ","bRed Busways ","Airavat Bus  "};
+		Busname=new String[] {"bRed Busways ","bRed Busways ","bRed Busways ","VolvoLines   "};
 		BusNumber=new int[] {433,223,213,197,-1};
 		BusCost=new int[] {800,650,700,500,-1};
 		Schedule[7]=new ArrDepData(Busname,BusNumber,BusCost);
 
-		Busname=new String[] {"WeRL Buslines", "bRed Busways ","Airavat Bus  ", "bRed Busways "};
+		Busname=new String[] {"WeRL Buslines", "bRed Busways ","VolvoLines   ", "bRed Busways "};
 		BusNumber=new int[] {566,311,259,448,-1};
 		BusCost=new int[] {900,350,500,600,-1};
 		Schedule[4]=new ArrDepData(Busname,BusNumber,BusCost);
 
-		Busname=new String[] {"Airavat Bus  ","Airavat Bus  ","bRed Busways ","bRed Busways ","Airavat Bus  "};
+		Busname=new String[] {"VolvoLines   ","VolvoLines   ","bRed Busways ","bRed Busways ","VolvoLines   "};
 		BusNumber=new int[] {648,448,742,445,287,-1};
 		BusCost=new int[] {550,750,600,800,450,-1};
 		Schedule[0]=new ArrDepData(Busname,BusNumber,BusCost);
 
-		Busname=new String[] {"WeRL Buslines","Airavat Bus  ","bRed Busways ","bRed Busways ","Airavat Bus  "};
+		Busname=new String[] {"WeRL Buslines","VolvoLines   ","bRed Busways ","bRed Busways ","VolvoLines   "};
 		BusNumber=new int[] {124,667,446,824,334,-1};
 		BusCost=new int[] {450,650,500,1000,700,-1};
 		Schedule[1]=new ArrDepData(Busname,BusNumber,BusCost);
 
-		Busname=new String[] {"WeRL Buslines", "Airavat Bus  ","WeRL Buslines","WeRL Buslines","bRed Busways "};
+		Busname=new String[] {"WeRL Buslines", "VolvoLines   ","WeRL Buslines","WeRL Buslines","bRed Busways "};
 		BusNumber=new int[] {156,187,934,438,555,-1};
 		BusCost=new int[] {450,650,500,1200,600,-1};
 		Schedule[5]=new ArrDepData(Busname,BusNumber,BusCost);
 
-		Busname=new String[] {"Airavat Bus  ","bRed Busways ", "WeRL Buslines", "Airavat Bus  ","bRed Busways ","Airavat Bus  "};
+		Busname=new String[] {"VolvoLines   ","bRed Busways ", "WeRL Buslines", "VolvoLines   ","bRed Busways ","VolvoLines   "};
 		BusNumber=new int[] {789,963,846,748,225,499,-1};
 		BusCost=new int[] {450,650,500,700,400,900,-1};
 		Schedule[2]=new ArrDepData(Busname,BusNumber,BusCost);
 
-		Busname=new String[] {"bRed Busways ","bRed Busways ","WeRL Buslines", "Airavat Bus  ","Airavat Bus  ","Airavat Bus  "};
+		Busname=new String[] {"bRed Busways ","bRed Busways ","WeRL Buslines", "VolvoLines   ","VolvoLines   ","VolvoLines   "};
 		BusNumber=new int[] {986,45,965,102,202,333,-1};
 		BusCost=new int[] {450,650,500,1300,1000,500,-1};
 		Schedule[3]=new ArrDepData(Busname,BusNumber,BusCost);
